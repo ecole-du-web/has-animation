@@ -9,10 +9,8 @@ body {
     background-color: #111;
 }
 
-
 .blurry-list {
     list-style: none;
-    padding: 0;
     max-width: 1000px;
     margin: 0 auto;
     padding: 150px 20px 50px;
@@ -23,37 +21,40 @@ body {
 }
 
 .blurry-list__item {
-    background-color: #fff;
     border-radius: 25px;
+    padding: 30px;
     font-size: 28px;
     font-weight: 500;
     cursor: pointer;
-    padding: 30px;
-    transition: 
-    filter 0.3s ease-out,
-    transform 0.3s ease-out;
+    will-change: transform;
+    transition:  
+    filter 0.3s ease-out, 
+    transform 0.3s ease-out; 
 }
+
 .blurry-list__item:nth-child(1) {background-color: #51cdf3;}
 .blurry-list__item:nth-child(2) {background-color: #f07167;}
 .blurry-list__item:nth-child(3) {background-color: #fdfcdc;}
 .blurry-list__item:nth-child(4) {background-color: #78e3e8;}
 .blurry-list__item:nth-child(5) {background-color: #fed9b7;}
 
-
-.blurry-list:has(.blurry-list__item:hover) .blurry-list__item:not(:hover) {
+/* .blurry-list {
+    background-color: salmon;
+} */
+.blurry-list:has(.blurry-list__item:hover) .blurry-list__item:not(:hover){
     filter: blur(5px);
-    transform: scale(0.95)
-}
-.blurry-list__item:hover {
-    transform: scale(1.05)
+    transform: scale(0.95);
 }
 
-/* 
-// Solution possible, mais la liste se floute même quand on ne survole pas un élément
-.blurry-list:hover .blurry-list__item  {
+.blurry-list__item:hover {
+    transform: scale(1.05);
+}
+
+
+/* .blurry-list:hover .blurry-list__item  {
     filter: blur(5px);
 } 
 
 .blurry-list .blurry-list__item:hover  {
     filter: blur(0px);
-} */
+}  */
