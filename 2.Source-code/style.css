@@ -18,6 +18,7 @@ body {
     gap: 30px;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     grid-auto-rows: 175px;
+    pointer-events: none;
 }
 
 .blurry-list__item {
@@ -27,9 +28,10 @@ body {
     font-weight: 500;
     cursor: pointer;
     will-change: transform;
-    transition:  
-    filter 0.3s ease-out, 
-    transform 0.3s ease-out; 
+    transition:
+    filter 0.3s ease-out,
+    transform 0.3s ease-out;
+    pointer-events: auto;
 }
 
 .blurry-list__item:nth-child(1) {background-color: #51cdf3;}
@@ -38,10 +40,7 @@ body {
 .blurry-list__item:nth-child(4) {background-color: #78e3e8;}
 .blurry-list__item:nth-child(5) {background-color: #fed9b7;}
 
-/* .blurry-list {
-    background-color: salmon;
-} */
-.blurry-list:has(.blurry-list__item:hover) .blurry-list__item:not(:hover){
+.blurry-list:hover .blurry-list__item:not(:hover){
     filter: blur(5px);
     transform: scale(0.95);
 }
@@ -49,12 +48,3 @@ body {
 .blurry-list__item:hover {
     transform: scale(1.05);
 }
-
-
-/* .blurry-list:hover .blurry-list__item  {
-    filter: blur(5px);
-} 
-
-.blurry-list .blurry-list__item:hover  {
-    filter: blur(0px);
-}  */
